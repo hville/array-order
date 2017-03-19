@@ -1,0 +1,30 @@
+{
+  "name": "array-order",
+  "version": "0.5.0",
+  "description": "sort an array in-place to a preset order",
+  "keywords": [
+    "array",
+    "sort",
+    "sequence",
+    "order",
+    "filter"
+  ],
+  "author": "Hugo Villeneuve",
+  "main": "./index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cotest": "^2.1.0"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hville/array-order.git"
+  },
+  "private": false,
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
