@@ -12,7 +12,7 @@ arrayOrder([2,1,0,3], order)         // [0,1,2,3]
 arrayOrder(['c','b','a','d'], order) // ['a','b','c','d']
 ```
 
-The function will throw if the length don't match or if the order contains duplicate (`[0,2,0]`) or invalid (`[9,'a',3]`) indices
+The function will throw if the lengths don't match or if the order contains duplicate (`[0,2,0]`) or invalid (`[9,'a',3]`) indices
 
 ## License
 
