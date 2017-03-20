@@ -1,6 +1,4 @@
-module.exports = sort
-
-function sort(array, order) {
+module.exports = function arrayOrder(array, order) {
 	var len = order.length
 	if (array.length !== len) throw Error('length mismatch' + array.length + ' !== ' + len)
 
