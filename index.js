@@ -5,21 +5,21 @@ function sort(array, order) {
 	if (array.length !== len) throw Error('length mismatch' + array.length + ' !== ' + len)
 
 	// iterate unmarked indices
-	for (var i=0; i<len; ++i) if (order[i] >= 0) {
-		var tmp = array[i],
-				ptr = i,
-				nxt = order[i]
-
-		order[ptr] ^= -1                 // mark
-		while(order[nxt] >= 0) {         // not visited
-			array[ptr] = array[ptr = nxt]  // switcharoo
-			nxt = order[ptr]
-			order[ptr] ^= -1               // mark
+	for (var i=0; i<len; ++i) {
+		var b = order[i]
+		if (b >= 0) {
+			var tmp = array[i],
+					a = i
+			while(order[b] >= 0) {                 // not visited
+				b = order[a]
+				order[a] ^= -1                       // mark
+				if (a !== b) array[a] = b === i ? tmp : array[a = b]  // switcharoo
+			}
+			if (b !== i) throw Error('invalid of duplicate order index')
 		}
-		if (nxt === i) array[ptr] = tmp
-		else throw Error('invalid of duplicate order index')
 	}
 	// remove marks
 	for (var j=0; j<len; ++j) order[j] ^= -1
 	return array
 }
+
