@@ -1,6 +1,7 @@
 {
   "name": "array-order",
-  "version": "0.7.0",
+  "version": "0.8.0",
+  "type": "module",
   "description": "sort an array in-place to a preset order",
   "keywords": [
     "array",
@@ -10,21 +11,16 @@
     "filter"
   ],
   "author": "Hugo Villeneuve",
-  "main": "./index.js",
-  "dependencies": {},
+  "main": "./sort.js",
   "devDependencies": {
-    "cotest": "^2.1.0"
+    "@types/node": "^13.13.2"
   },
   "scripts": {
-    "test": "node test"
+    "test": "node ./tst/test-heap && node ./tst/test-sort"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/hville/array-order.git"
   },
-  "private": false,
-  "license": "MIT",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  }
+  "license": "MIT"
 }

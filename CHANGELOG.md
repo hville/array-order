@@ -8,6 +8,14 @@
 ## [Unreleased]
 ~~Removed, Changed, Deprecated, Added, Fixed, Security~~
 
+## [0.8.0] - 2020-04-25
+### Added
+- heap permutations
+- more tests with permutations
+
+### Changed
+- simplified sort
+
 ## [0.7.0] - 2017-03-19
 ### Changed
 - Simplifications
