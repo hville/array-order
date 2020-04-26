@@ -1,8 +1,8 @@
 {
   "name": "array-order",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "type": "module",
-  "exports": "./index.js",
+  "main": "./index.js",
   "description": "sort an array in-place to a preset order",
   "keywords": [
     "array",
