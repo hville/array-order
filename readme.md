@@ -8,7 +8,8 @@
 ## summary
 
 * **sort** creates a sorter to sort multiple columns `(ref:Array [,compare]) => (a:Array) => a`
-* **rank** performs reordering based on given ranks `(ranks:Array, a:Array) => a:Array`
+* **rank** creates the sorting sequence an array `(a:Array, [,compare]) => rank:Array`
+* **pick** performs reordering based on given ranks `(rank:Array, a:Array) => a:Array`
 * **heap** creates a function that performs permutation, each one different `a:Array => () => a`
 
 ## example
