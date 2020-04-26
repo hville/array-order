@@ -1,7 +1,8 @@
 {
   "name": "array-order",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "type": "module",
+  "exports": "./index.js",
   "description": "sort an array in-place to a preset order",
   "keywords": [
     "array",
@@ -11,12 +12,11 @@
     "filter"
   ],
   "author": "Hugo Villeneuve",
-  "main": "./sort.js",
   "devDependencies": {
     "@types/node": "^13.13.2"
   },
   "scripts": {
-    "test": "node ./tst/test-heap && node ./tst/test-sort"
+    "test": "node ./tst/heap && node ./tst/rank && node ./tst/sort"
   },
   "repository": {
     "type": "git",

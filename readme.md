@@ -1,26 +1,41 @@
 <!-- markdownlint-disable MD004 MD007 MD010 MD012 MD041 MD022 MD024 MD032 MD036 -->
-
 # array-order
 
-*sort an array in-place to a preset order. All in place, no intermediate structures created*
+*in-place sorting of arrays*
+
+• [Example](#example) • [Features](#features) • [Limitations](#limitations) • [Why](#why) • [API](#api) • [License](#license)
+
+## summary
+
+* **sort** creates a sorter to sort multiple columns `(ref:Array [,compare]) => (a:Array) => a`
+* **rank** performs reordering based on given ranks `(ranks:Array, a:Array) => a:Array`
+* **heap** creates a function that performs permutation, each one different `a:Array => () => a`
 
 ## example
 
 ```javascript
-var arrayOrder = require('array-order'),
-    order = [2,1,0,3]
+import sort from 'array-order/sort.js'
 
-arrayOrder([2,1,0,3], order)         // [0,1,2,3]
-arrayOrder(['c','b','a','d'], order) // ['a','b','c','d']
+const columns = [[2,1,0,3], ['c','b','a','d']]
+columns.forEach(sort(columns[0]))
+//each column now sorted according to the first one
+//columns == [ [0,1,2,3], ['a','b','c','d'] ]
 ```
 
-## other exported utils
+## exports
+* named: `import {sort} from 'array-order'`
+* default: `import rank from 'array-order/rank.js'`
 
-the following are needed for testing and are also available
+## sort order
+the **sort** factory can take an additional compare function to change the sort order: `(ref:Array [,compare]) => (a:Array) => a`
+* **undefined** increasing numeric order
+* **any negative number** decreasing numeric order
+* **a normal compare function** just like Array.prototype.sort: `(a, b) => a - b`
 
-* `array-order/heap.js` creates a function that generates every permutations `(a:Array) => () => a:Array`
-* `array-order/swap.js` in place swap of 2 items `(a:Array, i:number, j:number) => a:Array`
-* `array-order/shift.js` in place left-swap from i to j `(a:Array, i:number, j:number) => a:Array`
+## other utilities
+the following other in-place utilities are needed internally and are also available
+* `array-order/swap.js` in place swap of 2 items `(a:Array, i:number, j:number) => a`
+* `array-order/shift.js` in place left-swap from i to j `(a:Array, i:number, j:number) => a`
 
 ## License
 

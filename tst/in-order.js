@@ -1,4 +1,4 @@
-import sequence from './sequence.js'
+import sequence from '../sequence.js'
 import heap from '../heap.js'
 
 // testing utils
@@ -15,16 +15,7 @@ export default function(algo, size) {
 	for (var i=0; i<n; ++i) {
 		var ref = perm()
 		sequence(seq) //reset
-		algo(seq, ref) //seq reordered to match ref
-		same(seq, ref)
+		algo(ref, seq) //seq reordered to match ref
+		same(ref, seq)
 	}
 }
-
-//order(mix, seq) => mix (unchanged)
-
-//order(seq, mix) => mix (mutated to match mix)
-//order(mix, mix) => xim
-//order(xim, mix) => seq
-
-//order(xim, xim) => mix
-//order(mix, xim) => seq

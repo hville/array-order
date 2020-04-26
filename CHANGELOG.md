@@ -8,13 +8,14 @@
 ## [Unreleased]
 ~~Removed, Changed, Deprecated, Added, Fixed, Security~~
 
-## [0.8.0] - 2020-04-25
+## [0.9.0] - 2020-04-26
+### Changed
+- rank finding now called `rank` with the arguments reversed to `(source, target)`
+
 ### Added
+- inplace sorting of arrays based on given raking
 - heap permutations
 - more tests with permutations
-
-### Changed
-- simplified sort
 
 ## [0.7.0] - 2017-03-19
 ### Changed

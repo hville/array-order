@@ -1,4 +1,4 @@
-import sequence from './sequence.js'
+import sequence from '../sequence.js'
 
 // testing utils
 function factorial(n) {

@@ -1,13 +1,13 @@
-export default function(arr, seq) {
-	var len = seq.length
-	for (var i=0; i<len; ++i) {
-		var j = seq[i]
-		while (j<i) j = seq[j]
-		if (i!==j) {
-			var t = arr[i]
-			arr[i] = arr[j]
-			arr[j] = t
-		}
-	}
-	return arr
+import rank from './rank.js'
+
+export default function(ref, dir) {
+	var seq = [],
+			i = 0
+	while (i<ref.length) seq[i] = i++
+	seq.sort(
+		dir < 0 ? function(a,b) { return ref[b]-ref[a] }
+		: typeof dir === 'function' ? function(a,b) { return dir(ref[a], ref[b]) }
+		: function(a,b) { return ref[a]-ref[b] }
+	)
+	return rank.bind(null,seq)
 }
