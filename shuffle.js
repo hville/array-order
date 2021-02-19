@@ -9,7 +9,8 @@ import swap from './swap.js'
  * shuffle(src, src) // src is also shuffled in place
  *
  * @typedef {Array|Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Uint8ClampedArray|Float32Array|Float64Array} ArrayLike
- * @param {ArrayLike} array
+ * @param {ArrayLike} src
+ * @param {ArrayLike} [tgt]
  * @return {ArrayLike}
  */
 export default function(src, tgt) {

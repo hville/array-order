@@ -8,11 +8,22 @@ import swap from './swap.js'
  * 	sattolo(arr) // arr is now deranged
  *
  * @typedef {Array|Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Uint8ClampedArray|Float32Array|Float64Array} ArrayLike
- * @param {Array} array
- * @return {Array}
+ * @param {ArrayLike} src
+ * @param {ArrayLike} [tgt]
+ * @return {ArrayLike}
  */
-export default function(array) {
-	let n = arr.length
+export default function(src, tgt) {
+	if (tgt) { // inside-out
+		tgt[0] = src[0]
+		for (let j=1; j<src.length; ++j) {
+			let i = Math.floor(Math.random() * j)
+			if (i !== j) tgt[j] = tgt[i]
+			tgt[i] = src[j]
+		}
+		return tgt
+	}
+	// in-place
+	let n = src.length
 	while (n) swap( arr, --n, Math.floor(Math.random() * n))
-	return arr
+	return src
 }
