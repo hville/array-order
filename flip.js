@@ -15,7 +15,7 @@ export default function(src, tgt) {
 		return tgt
 	}
 	// in-place
-	for (let i=0; i<src.length; ++i) if (src[i] > 0) {
+	for (let i=0; i<src.length; ++i) if (src[i] >= 0) {
 		let j=i,
 				v=src[j]
 		while (v != i) {
