@@ -1,8 +1,4 @@
 .git/
 node_modules/
-notes/
-example/
-bld/
-note/
 old/
 *.log
