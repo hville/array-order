@@ -13,7 +13,9 @@
   ],
   "author": "Hugo Villeneuve",
   "devDependencies": {
-    "@types/node": "^13.13.2"
+    "@hugov/bench": "^0.1.1",
+    "@types/node": "^14.14.30",
+    "assert-op": "^0.8.0"
   },
   "scripts": {
     "test": "node ./tst/heap && node ./tst/pick && node ./tst/sort"

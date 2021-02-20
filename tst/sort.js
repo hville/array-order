@@ -1,10 +1,10 @@
 import {sort} from '../index.js'
 
 function isinc(arr) {
-	for (var i=0; i<arr.length-1;) if (arr[i] > arr[++i]) throw Error(arr.join(''))
+	for (let i=0; i<arr.length-1;) if (arr[i] > arr[++i]) throw Error(arr.join(''))
 }
 function isdec(arr) {
-	for (var i=0; i<arr.length-1;) if (arr[i] < arr[++i]) throw Error(arr.join(''))
+	for (let i=0; i<arr.length-1;) if (arr[i] < arr[++i]) throw Error(arr.join(''))
 }
 function test(arr, dir, chk) {
 	chk( sort(arr, dir)(arr.slice()) )
