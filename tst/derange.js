@@ -1,6 +1,6 @@
 import t from 'assert-op'
 import flip from '../flip.js'
-import shuffle from '../shuffle.js'
+import shuffle from '../util/shuffle.js'
 import derange from '../src/derange.js'
 
 t('flip-to', a=>{

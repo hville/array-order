@@ -1,17 +1,19 @@
 <!-- markdownlint-disable MD004 MD007 MD010 MD012 MD041 MD022 MD024 MD032 MD036 -->
 # array-order
 
-*in-place sorting of arrays*
+*collection of in-place sorting of arrays*
 
 • [Example](#example) • [Features](#features) • [Limitations](#limitations) • [Why](#why) • [API](#api) • [License](#license)
 
 ## summary
 
-* **sort** creates a sorter to sort multiple columns `(ref:Array [,compare]) => (a:Array) => a`
-* **rank** creates the sorting sequence an array `(a:Array, [,compare]) => rank:Array`
-* **pick** performs reordering based on given ranks `(rank:Array, a:Array) => a:Array`
-* **heap** creates a function that performs permutation, each one different `a:Array => () => a`
+* **rank**`(a:ArrayLike, [,compare]) => ranks:ArrayLike`
+* **order**`(a:ArrayLike, [,compare]) => orders:ArrayLike`
+* **flip**`(a:ArrayLike) => a` ranks==>orders; orders==>ranks
+* **pick**`(order:ArrayLike, a:ArrayLike) => a` performs reordering based on given ranks
 
+...and more, see individual files for descriptions and examples
+most function have a in-place and to-target version depending on the arguments
 ## example
 
 ```javascript

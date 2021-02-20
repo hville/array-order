@@ -1,6 +1,6 @@
 import t from 'assert-op'
-import sequence from '../sequence.js'
-import rotate from '../rotate.js'
+import sequence from '../util/sequence.js'
+import rotate from '../util/rotate.js'
 
 t('left', a=> {
 	for (let n=3; n<12; ++n) for (let d=0; d<n; ++d) {

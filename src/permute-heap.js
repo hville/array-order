@@ -1,4 +1,4 @@
-import swap from '../swap.js'
+import swap from '../util/swap.js'
 
 /**
  * In place mutation to generate all permutations of a source array

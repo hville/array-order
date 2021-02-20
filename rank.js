@@ -1,5 +1,4 @@
-import rank from './rank.js'
-import flip from './rank.js'
+import sequence from './util/sequence.js'
 
 /**
  * get an array representing the ordering i <= [i]
@@ -13,6 +12,10 @@ import flip from './rank.js'
  * @return {ArrayLike}
  */
 export default function(ref, dir) {
-	return flip(rank(ref, dir))
+	return sequence(ref.length).sort(
+		typeof dir === 'function' ? (a,b) => dir( ref[a], ref[b] )
+		: dir < 0 ? (a,b) => ref[b] - ref[a]
+		: (a,b) => ref[a] - ref[b]
+	)
 }
 

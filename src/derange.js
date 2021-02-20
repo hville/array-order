@@ -1,5 +1,5 @@
-import permute from '../permute.js'
-import sequence from '../sequence.js'
+import permute from '../util/permute.js'
+import sequence from '../util/sequence.js'
 
 
 /**
