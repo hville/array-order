@@ -1,6 +1,6 @@
 {
   "name": "array-order",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "main": "./index.js",
   "description": "sort an array in-place to a preset order",
@@ -18,7 +18,7 @@
     "assert-op": "^0.8.0"
   },
   "scripts": {
-    "test": "node ./tst/heap && node ./tst/pick && node ./tst/sort"
+    "test": "node ./tst/derange && node ./tst/flip && node ./tst/order && node ./tst/pick && node ./tst/rank && node ./tst/rotate"
   },
   "repository": {
     "type": "git",
