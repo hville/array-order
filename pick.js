@@ -1,10 +1,13 @@
 /**
- * reorder array based on given from positions `(from:Array, src:Array) => Array`
+ * @typedef {Array|Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Uint8ClampedArray|Float32Array|Float64Array} ArrayLike
+ */
+
+/**
+ * reorder array based on given from positions `(ref:ArrayLike, src:Array) => Array`
  *
  * @example
  * 	const abc = pick( [2,0,1], ['b','c','a'] ) // ==> ['a','b','c']
  *
- * @typedef {Array|Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Uint8ClampedArray|Float32Array|Float64Array} ArrayLike
  * @param {ArrayLike} ref order to apply to the source array
  * @param {ArrayLike} src array to be ordered
  * @param {ArrayLike} [tgt] destination, inplace if absent
