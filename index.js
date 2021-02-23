@@ -1,6 +1,6 @@
 export {default as flip} from './flip.js'
 export {default as order} from './order.js'
-export {default as permute} from './src/permute.js'
+export {default as permute} from './permute.js'
 export {default as pick} from './pick.js'
 export {default as rank} from './rank.js'
 export {default as sort} from './sort.js'
