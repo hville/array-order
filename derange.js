@@ -1,6 +1,6 @@
 import permute from './permute.js'
-import sequence from './util/sequence.js'
-import rotate from './util/rotate.js'
+import sequence from './sequence.js'
+import rotate from './rotate.js'
 
 /**
  * Derangement

@@ -1,4 +1,3 @@
-import swap from './swap.js'
 /**
  * in-place random single cycle derangement
  * https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Sattolo's_algorithm
@@ -23,7 +22,12 @@ export default function(src, tgt) {
 		return tgt
 	}
 	// in-place
-	let n = src.length
-	while (n) swap( arr, --n, Math.floor(Math.random() * n))
+	let j = src.length
+	while (--j) {
+		const i = Math.floor(Math.random() * j), // i<j always deranged
+					t = src[i]
+		src[i] = src[j]
+		src[j] = t
+	}
 	return src
 }

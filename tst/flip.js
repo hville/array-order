@@ -1,7 +1,5 @@
 import t from 'assert-op'
-import flip from '../flip.js'
-import sequence from '../util/sequence.js'
-import shuffle from '../util/shuffle.js'
+import {flip, sequence, shuffle} from '../index.js'
 
 t('flip-to', a=>{
 	for (let i=1; i<10; ++i) {

@@ -1,8 +1,8 @@
 /**
  * @typedef {Array|Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Uint8ClampedArray|Float32Array|Float64Array} ArrayLike
  */
-import sequence from './util/sequence.js'
-import swap from './util/swap.js'
+import sequence from './sequence.js'
+import swap from './swap.js'
 
 /**
  * Steinhaus-Johnson-Trotter with Even speedup

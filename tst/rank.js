@@ -1,7 +1,5 @@
 import t from 'assert-op'
-import sequence from '../util/sequence.js'
-import shuffle from '../util/shuffle.js'
-import rank from '../rank.js'
+import {sequence, shuffle, rank} from '../index.js'
 
 t('rank', a=>{
 	for (let i=1; i<10; ++i) {

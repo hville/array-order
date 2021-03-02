@@ -16,4 +16,5 @@ export default function(a, i, j) {
 		a[i] = a[j]
 		a[j] = t
 	}
+	return a
 }

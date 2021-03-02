@@ -1,7 +1,7 @@
 /**
  * @typedef {Array|Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Uint8ClampedArray|Float32Array|Float64Array} ArrayLike
  */
-import sequence from './util/sequence.js'
+import sequence from './sequence.js'
 
 /**
  * get an array representing the ordering i <= [i]

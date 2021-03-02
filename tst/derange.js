@@ -1,5 +1,5 @@
 import t from 'assert-op'
-import derange from '../derange.js'
+import {derange} from '../index.js'
 
 t('uniquely deranged', a => {
 	const set = new Set,
