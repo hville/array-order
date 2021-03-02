@@ -17,6 +17,6 @@ t('pick-in', a => {
 		const seq = sequence(i),
 					rnk = shuffle(seq.slice()),
 					ord = flip(rnk.slice())
-		a('{===}', pick(ord, rnk, []), seq)
+		a('{===}', pick(ord, rnk), seq)
 	}
 })

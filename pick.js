@@ -36,5 +36,5 @@ export default function(ref, src, tgt) {
 		}
 	}
 	for (let i=0; i<ref.length; ++i) ref[i] ^= -1
-	return tgt
+	return src
 }

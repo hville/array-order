@@ -1,6 +1,6 @@
 {
   "name": "array-order",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "type": "module",
   "main": "./index.js",
   "description": "sort an array in-place to a preset order",
