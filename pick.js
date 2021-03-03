@@ -1,5 +1,6 @@
 /**
  * @typedef {Array|Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Uint8ClampedArray|Float32Array|Float64Array} ArrayLike
+ * @typedef {Array|Int8Array|Int16Array|Int32Array|Float32Array|Float64Array} SignedArrayLike
  */
 
 /**
@@ -8,7 +9,7 @@
  * @example
  * 	const abc = pick( [2,0,1], ['b','c','a'] ) // ==> ['a','b','c']
  *
- * @param {ArrayLike} ref order to apply to the source array
+ * @param {SignedArrayLike} ref order to apply to the source array
  * @param {ArrayLike} src array to be ordered
  * @param {ArrayLike} [tgt] destination, inplace if absent
  * @return {ArrayLike}
