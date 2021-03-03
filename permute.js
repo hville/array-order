@@ -1,36 +1,47 @@
-/**
- * @typedef {Array|Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Uint8ClampedArray|Float32Array|Float64Array} ArrayLike
- */
-import sequence from './sequence.js'
 import swap from './swap.js'
+/**
+ * In place mutation to generate all permutations of a source array
+ * heap algorithm: most efficient permutation generating algorithm (fewest swaps)
+ *
+ * @typedef {Array|Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Uint8ClampedArray|Float32Array|Float64Array} ArrayLike
+ * @param {ArrayLike} a source array to be mutated
+ * @return {()=>ArrayLike} mutation generating function
+ */
+export default function(a, n=a.length) {
+	const c = new Uint16Array(n)
+	let i= 0
+	while (i<n) c[i++] = 0
+	return function() {
+		i = 0
+		while (c[i] >= i) {
+			c[i] = 0
+			if (++i===n) { // reset to the initial source sequence
+				if (!(n&1)) { //even sources require more magic
+					swap(a, 0, n-2)
+					left(a, 1, n-2)
+				}
+				swap(a, 0, n-1)
+				return a //same as the initial sequence
+			}
+		}
+		swap(a, i, i&1 ? c[i] : 0)
+		++c[i]
+		return a
+	}
+}
 
 /**
- * Steinhaus-Johnson-Trotter with Even speedup
- * @param {number|ArrayLike} seq if number, generates a sequence, else, in-place permutation
- * @param {number} [len] if only part of the array needs to be permuted
- * @return {ArrayLike}
+ * In-place left-shift of array items from i to j
+ * @typedef {Array|Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Uint8ClampedArray|Float32Array|Float64Array} ArrayLike
+ * @param {Array} a
+ * @param {number} i
+ * @param {number} j
+ * @return {void}
  */
-export default function(seq, len) {
-	const pos = seq.length ? seq : sequence(seq),
-				N = len ?? pos.length,
-				dir = Array(N).fill(-1)
-	/* will generate N!-1 results */
-	return function () {
-		let iM = -1 // largest mobile @ iM
-		for (let i=0; i<N; ++i) if (
-			( pos[i] > pos[i + dir[i]]) /* isMobile */
-			&& !( pos[i] < pos[iM]) /* isMax */
-		) iM = i
-
-		if (iM<0) {
-			dir.fill(-1)
-			swap(pos, 0, 1)
-		} else {
-			let jM = iM + dir[iM]
-			swap(pos, iM, jM)
-			swap(dir, iM, jM)
-			for (let i=0; i<N; ++i) if (pos[i] > pos[jM]) dir[i] = -dir[i]
-		}
-		return pos
+export function left(a, i=0, j=a.length-1) {
+	if (j>i) {
+		const t = a[i]
+		while(i<j) a[i]=a[++i]
+		a[j] = t
 	}
 }
